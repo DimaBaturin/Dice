@@ -6,7 +6,7 @@ let audio = new Audio("dice.mp3");
 let game = document.querySelector('.game-box');
 
 for(let i = 0; i < 10; i++){
-    boxes[i].textContent = Math.trunc(Math.random() * 6)
+    boxes[i].textContent = Math.trunc(Math.random() * 6) + 1;
 }
 
 
@@ -37,7 +37,7 @@ function restarts(){
     game.style.filter="blur(0px)";
     for(let i = 0; i < 10; i++){
         boxes[i].removeAttribute("data-active");
-        boxes[i].textContent = Math.trunc(Math.random() * 6)
+        boxes[i].textContent = Math.trunc(Math.random() * 6) + 1;
         boxes[i].style.backgroundColor = "white";
     }
 }
@@ -47,7 +47,7 @@ btnres.addEventListener('click', restarts);
 btn.addEventListener('click', () =>
     boxes.forEach(box => {
         if (!box.hasAttribute("data-active")) {
-            box.textContent = Math.trunc(Math.random() * 6)
+            box.textContent = Math.trunc(Math.random() * 6) + 1;
         }
         audio.play();
     }
