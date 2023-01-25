@@ -25,12 +25,14 @@ boxes.forEach(box => {
 });
 
 function checkWin(){
-    if(Array.from(boxes).every(box => box.hasAttribute("data-active"))){
+    let firstBoxText = boxes[0].textContent;
+    let checkBox= Array.prototype.every.call(boxes, box => box.textContent === firstBoxText);
+    if (checkBox) {
+        console.log("All boxes have the same text content!");
         console.log("hello");
-        restart.style.display='inherit';
-        game.style.filter="blur(2px)";
-    }
-}
+        restart.style.display = 'inherit';
+        game.style.filter = "blur(2px)";
+    }};
 
 function restarts(){
     restart.style.display='none';
